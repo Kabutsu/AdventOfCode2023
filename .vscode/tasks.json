@@ -1,0 +1,19 @@
+// .vscode/tasks.json
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "yarn tsc: build - tsconfig.json",
+          "command": "yarn tsc",
+          "type": "shell",
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "presentation": {
+              "reveal": "always",
+              "panel": "new"
+          }
+      }
+  ]
+}

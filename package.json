@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.1",
+    "node": "^21.2.0"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  }
+}
