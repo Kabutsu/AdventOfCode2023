@@ -4,13 +4,13 @@ const MAX_RED = 12;
 const MAX_GREEN = 13;
 const MAX_BLUE = 14;
 
-type TCombo = {
+export type TCombo = {
   red?: number;
   green?: number;
   blue?: number;
 };
 
-type TGame = {
+export type TGame = {
   id: number;
   draws: Array<TCombo>;
 };
@@ -59,14 +59,18 @@ const isGamePossible = (game: TGame) => {
   return !game.draws.find(x => x.red > MAX_RED || x.green > MAX_GREEN || x.blue > MAX_BLUE);
 };
 
-const solve = (data: Array<string>) => {
-  const games: Array<TGame> = data.map(input => {
+export function getGames(data: Array<string>): Array<TGame> {
+  return data.map(input => {
     const [id, game] = getId(input);
     return {
       id: id as number,
       draws: getCombos(game as string),
     };
   });
+};
+
+const solve = (data: Array<string>) => {
+  const games: Array<TGame> = getGames(data);
 
   const possibleGames = games.filter(x => isGamePossible(x));
 
